@@ -1,0 +1,158 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+#body-container {
+    display: flex;
+    flex-direction: column;
+    width: 36em;
+}
+
+@media (max-width: 480px) {
+    #body-container {
+        width: 100%;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
+#header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    flex-direction: column;
+}
+
+#header h1 {
+    font-size: 2.5em;
+}
+
+#header-text a {
+    text-decoration: none;
+    color: #e34234;
+}
+
+#header-text a:hover {
+    color: black;
+}
+
+
+#topnav {
+    display: flex;
+    justify-content: center;
+    border-bottom: 4px solid black;
+    border-top: 4px solid black;
+    font-family: 'IBM Plex Mono', monospace;
+    width: 100%;
+    
+}
+
+#topnav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    margin-right: 20px;
+    
+}
+
+#topnav ul li {
+    margin-right: 20px;
+}
+
+#topnav ul li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+#topnav ul li a.active {
+    color: gray;
+}
+
+
+#homepage-summaries article figure figcaption {
+    color: gray;
+}
+
+#homepage-summaries article figure figcaption h4 {
+    font-style: italic;
+}
+
+
+.post-time {
+    color: gray;
+}
+
+article h1 {
+    font-size: 1.75em
+}
+
+.article-title {
+    font-size: 2em;
+}
+
+.article-title a {
+    text-decoration: none;
+    color: #e34234;
+}
+
+.post-time time a {
+    text-decoration: none;
+    color:inherit;
+}
+
+.article-title a:hover, .post-time time a:hover {
+    color: #e34234;
+}
+
+/* List stuff goes here */
+
+#list-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+/* Single pages */
+
+#main-single {
+    display: inline-block;
+    flex-direction: row;
+    justify-content: left;
+    overflow-wrap: anywhere;
+}
+
+#main-single img {
+    display: inline-block;
+}
+
+#main-single article figure figcaption {
+    color: gray;
+}
+
+#main-single article figure figcaption h4 {
+    font-style: italic;
+}
+
+/* Footer */
+#footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.keep-linebreaks {
+    white-space: pre-wrap;
+}

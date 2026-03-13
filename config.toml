@@ -1,0 +1,7 @@
+baseURL = "http://thinking.farm/"
+languageCode = "en-us"
+title = "thinking.farm"
+theme = "rowlet"
+pluralizelisttitles = "false"
+[markup.goldmark.renderer]
+    unsafe = true

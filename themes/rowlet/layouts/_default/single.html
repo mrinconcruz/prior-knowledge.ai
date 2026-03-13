@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section id="main-single">
+    <article>
+
+        <h2 class="article-title"><a href={{ .Permalink }}>{{ .Title }}</a></h1>
+            <div class="post-time">
+                Written on <time datetime={{ .Date }}><a
+                        href={{ .Permalink }}>{{ .Date.Format "January 02, 2006" }}</a></time>
+            </div>
+            <section id="single-content">
+                {{- $footnoteHead := `<section class="footnotes" role="doc-endnotes">` -}}
+                {{- $insertContent := partial "mailchimp.html" .  -}}
+                
+                {{- $joined := print $insertContent $footnoteHead -}}
+                
+                {{ $Content := replace .Content $footnoteHead $joined }}
+                
+                {{ $Content | safeHTML }}
+                    
+            </section>
+    </article>
+</section>
+{{ end }}
