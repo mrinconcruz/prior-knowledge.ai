@@ -1,8 +1,10 @@
 ---
+hidden: true
 title: "Does stablecoin systemic risk exist? Thoughts on Tether, Terra, and Tulips"
 date: 2022-06-14
 draft: true
 ---
+hidden: true
 
 ***The following essay expands on a June 13, 2022, Wall Street Journal column co-authored with Niall Ferguson, found [here](https://www.wsj.com/articles/stablecoins-infect-financial-markets-janet-yellen-terra-luna-tether-crypto-run-risk-collapse-recession-investment-dollar-stability-inflation-11655057043), which in turn adapts a Buttonwood Letter distributed on May 11, 2022 as Terra was de-pegging.***
 

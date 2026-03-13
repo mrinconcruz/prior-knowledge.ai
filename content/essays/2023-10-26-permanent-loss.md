@@ -1,7 +1,9 @@
 ---
+hidden: true
 title: "Permanent Loss Part 1: Liquid Staking Tokens are Crypto's Treasuries"
 date: 2023-12-04
 ---
+hidden: true
 
 
 ***TL;DR\: Native, value-accruing tokens are poised to fuel a boom in decentralized finance \:***

@@ -1,7 +1,9 @@
 ---
+hidden: true
 title: "Designing Money: A Functional Trilemma for the Digital Age"
 date: 2020-12-29T15:50:17-07:00
 ---
+hidden: true
 ***TL;DR\: We need a new way to understand money—instead of discussing what money is we are best served by clarifying what money does. I propose a trilemma of functions that money can support\:***
 -	***adaptive supply***
 -	***durable value***

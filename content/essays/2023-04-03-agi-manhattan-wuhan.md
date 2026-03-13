@@ -1,7 +1,9 @@
 ---
+hidden: true
 title: "The Triumph and Terror of Sama and Yud: AGI as Manhattan, Wuhan, or Dark Forest"
 date: 2023-04-03
 ---
+hidden: true
 
 
 ***TL;DR\: The promise and risks of AGI will manifest well before we create a superintelligence. We can thus productively reflect on humanity's catalogue of disasters to reason about AGI safety, classifying them on two dimentions\:***

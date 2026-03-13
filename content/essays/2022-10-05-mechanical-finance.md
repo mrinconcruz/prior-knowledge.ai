@@ -1,7 +1,9 @@
 ---
+hidden: true
 title: "Mechanical Finance: Vaults, Runs, Aggregation and Automation"
 date: 2022-10-05
 ---
+hidden: true
 ***TL;DR\:***
 
 ***1. Finance can be mechanized through vaults, smart contracts that replace hundreds or thousands of transactions with a single transaction, obviating the need for blockchains capable of processing millions of transactions per second.***

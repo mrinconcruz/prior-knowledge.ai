@@ -1,7 +1,9 @@
 ---
+hidden: true
 title: "Hello, is Your Bank Running? (Banking the Future P.I)"
 date: 2023-03-29
 ---
+hidden: true
 
 ***For reading and commenting on earlier drafts, I’d like to thank Nic Carter, Christian Angelopoulos, Noah Jessop, Chris Chow, Rooter, Jack Dille, Brandon Iles, Fiddlekins, Matt Fisher, and Joey Roth. All errors that remain are entirely their fault.***
 

@@ -1,7 +1,9 @@
 ---
+hidden: true
 title: "Russia, Sanctions, and “Digital Gold”—Lessons from the History of War and Finance "
 date: 2022-02-28
 ---
+hidden: true
 ***TL;DR\: Great power financial sanctions, including currency reserve sequestration, have a long history. Financial authorities have a historically-tested playbook in response:***
 -   ***rebuilding financial reserves***
 -   ***ensuring domestic financial solvency***

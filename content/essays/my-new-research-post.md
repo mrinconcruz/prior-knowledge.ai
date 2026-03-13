@@ -1,8 +1,10 @@
 ---
+hidden: true
 title: "Why “bond coins” cannot work—two easy, three-step proofs"
 date: 2020-12-27T18:28:29-08:00
 draft: true
 ---
+hidden: true
 
 
 

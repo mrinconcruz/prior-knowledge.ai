@@ -1,7 +1,9 @@
 ---
+hidden: true
 title: "A Stablecoin by Any Other Name: Value, Risk, Loss, and Gain"
 date: 2021-01-26T15:50:17-07:00
 ---
+hidden: true
 ***TL;DR\: Journalists and analysts have not proposed a coherent logical definition of the word stablecoin, as evidenced by their inability to reliably identify stablecoin projects. The confusion is strongest when it comes to discussions of “algorithmic stablecoins,” and arises when commentators use “stablecoin” both as a historical name for specific projects and as a logical descriptive definition for a special class of tokens.***
 
 ***To clarify this confusion, I provide a well-founded description of value as “value in terms of a measurement unit,” which then allows me to classify all digital assets by their risk of loss, or the probability of realizing a decrease in value, and risk of gain, or the probability of realizing an increase in value. This allows us to precisely and descriptively define stablecoins—assets where \\(\\ p(gain)=p(loss)=0\\) . Using this definition, it is clear that today’s “algorithmic stablecoins” by design have no risk of gain but retain a risk of loss. Yikes! It is also clear that Ampleforth is like Bitcoin or Ethereum—it has a risk of gain and a risk of loss.***

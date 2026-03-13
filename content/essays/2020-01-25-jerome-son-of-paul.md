@@ -1,7 +1,9 @@
 ---
+hidden: true
 title: "Jerome, son of Paul: Is crypto ready for a Volcker Shock? "
 date: 2022-01-25
 ---
+hidden: true
 ***TL;DR\: Crypto is not one thing--it is two asset types sharing the same name\:***
 -   ***deflationary stores of value, of which Bitcoin is the most important***
 -   ***smart contract applications, of which DeFi is the paradigmatic example***

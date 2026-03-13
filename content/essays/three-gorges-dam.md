@@ -1,7 +1,9 @@
 ---
+hidden: true
 title: "To Dam or Not to Dam: Exploring the Failure Risk of the Three Gorges Dam "
 date: 2020-07-26T05:50:17-07:00
 ---
+hidden: true
 *This research explores the risk that the Three Gorges dam will experience failure. 
 I believe the risk that the dam becomes structurally compromised, and requires the government to drain the reservoir to undertake repairs, is  **20-25%**. In the case that there is a seismic event, that likelihood would be closer to **80%**. I put the chance of a dam failure during this summer's ongoing floods at **5-10%**, rising to **30%** in the case of a seismic event.*
 

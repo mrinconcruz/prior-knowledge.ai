@@ -1,8 +1,10 @@
 ---
+hidden: true
 title: "Beware the Coupon Clipper: The Insurmountable Flaws of so-called Algorithmic Stablecoins"
 date: 2021-01-17
 hidden: false
 ---
+hidden: true
 ***TL;DR\: “Coupon coins” peg their exchange rates by minting coins when their price is above the peg, and issuing interest-bearing coupons when below. Because these protocols cannot force a permanent reduction in coin supply, once demand growth flatlines the protocol itself creates and magnifies instability, causing the price to oscillate wildly and the peg to break.***
 ***Coupon coins borrow the language of central bank open market operations, which is grossly misleading. Not only do regulations treat government debt as a "safe asset," central banks nonetheless opt for exchange rate intervention or capital controls to enforce a peg.***
 

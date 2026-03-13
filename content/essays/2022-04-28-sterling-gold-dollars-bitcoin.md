@@ -1,7 +1,9 @@
 ---
+hidden: true
 title: "Flourishing Together: Like Sterling and Gold, Like Dollars and Bitcoin "
 date: 2022-04-28
 ---
+hidden: true
 
 ## Introduction
 
