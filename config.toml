@@ -12,7 +12,7 @@ pluralizelisttitles = "false"
   endLevel = 3
 
 [params]
-  author = "Niall Ferguson"
+  author = "Manny Rincon-Cruz"
   organization = "Four Winds Research"
   subtitle = "The AGI Transition"
   pdfPath = "/prior-knowledge.pdf"
