@@ -1,7 +1,14 @@
 <header id="header">
-    <h1 id="header-text">
-        <a href="/">{{ .Site.Title }}</a>
-    </h1>
+    <div id="header-row">
+        <h1 id="header-text">
+            <a href="/">{{ .Site.Title }}</a>
+        </h1>
+        <button id="hamburger-btn" onclick="document.getElementById('topnav').classList.toggle('open')" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
     <nav id="topnav">
         <ul>
             {{ range (where .Site.RegularPages "Params.series" true).ByParam "series_order" }}
