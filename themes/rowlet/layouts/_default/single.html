@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section id="main-single">
+    <article>
+        <h1 class="article-title">{{ .Title }}</h1>
+
+        {{ partial "toc.html" . }}
+
+        <section id="single-content">
+            {{- $footnoteHead := `<section class="footnotes" role="doc-endnotes">` -}}
+            {{- $insertContent := "" -}}
+            {{ if not .Params.series }}
+                {{- $insertContent = partial "mailchimp.html" . -}}
+            {{ end }}
+            {{- $joined := print $insertContent $footnoteHead -}}
+            {{ $Content := replace .Content $footnoteHead $joined }}
+            {{ $Content | safeHTML }}
+        </section>
+
+        {{ if .Params.series_next }}
+        <div class="series-next">
+            <a href="{{ .Params.series_next }}">Next in series: {{ .Params.series_next_title }} →</a>
+        </div>
+        {{ end }}
+    </article>
+</section>
+{{ end }}

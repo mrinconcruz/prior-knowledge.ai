@@ -1,0 +1,6 @@
+{{ if and .Params.toc .TableOfContents }}
+<details class="toc-wrapper" open>
+    <summary>In this essay</summary>
+    {{ .TableOfContents }}
+</details>
+{{ end }}

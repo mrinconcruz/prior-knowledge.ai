@@ -1,0 +1,14 @@
+{{ define "main" }}
+<h1>{{ .Site.Params.subtitle }}</h1>
+<p><em>by {{ .Site.Params.author }}</em></p>
+
+{{ .Content }}
+
+<ul id="sidebar-nav">
+    {{ range (where .Site.RegularPages "Params.series" true).ByParam "series_order" }}
+    <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}

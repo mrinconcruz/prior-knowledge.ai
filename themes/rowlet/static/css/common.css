@@ -1,0 +1,610 @@
+/* ==========================================================================
+   PRIOR KNOWLEDGE — SA-style layout
+   ========================================================================== */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #222;
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.75;
+}
+
+/* --- Two-column grid layout --- */
+#site-wrapper {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+#sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    background: #f5f5f5;
+    padding: 2rem 1.5rem;
+    border-right: 1px solid #e0e0e0;
+}
+
+#sidebar-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 0 0 0.25rem 0;
+}
+
+#sidebar-title a {
+    text-decoration: none;
+    color: #111;
+}
+
+#sidebar-subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: #555;
+    margin: 0 0 2rem 0;
+    font-style: italic;
+}
+
+#sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+
+#sidebar-nav li {
+    margin-bottom: 0.5rem;
+}
+
+#sidebar-nav li a {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #555;
+    text-decoration: none;
+    padding: 0.3rem 0 0.3rem 0.75rem;
+    border-left: 2px solid transparent;
+    transition: color 0.15s;
+}
+
+#sidebar-nav li a:hover {
+    color: #111;
+}
+
+#sidebar-nav li a.active {
+    font-weight: 700;
+    color: #111;
+    border-left: 2px solid #222;
+    padding-left: 0.5em;
+}
+
+#sidebar-pdf {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: #555;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    padding: 0.4rem 0;
+}
+
+#sidebar-pdf:hover {
+    color: #111;
+    text-decoration: underline;
+}
+
+#sidebar .sidebar-signup {
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+}
+
+/* --- Main content area --- */
+#main-area {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#content {
+    max-width: 65ch;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    flex: 1;
+}
+
+/* --- Mobile header (hidden on desktop) --- */
+#mobile-header {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#mobile-header-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+#mobile-header-title a {
+    text-decoration: none;
+    color: #111;
+}
+
+#hamburger-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#hamburger-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #222;
+}
+
+/* Mobile overlay nav */
+#mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+#mobile-nav-overlay.open {
+    display: block;
+}
+
+#mobile-nav-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: #f5f5f5;
+    padding: 2rem 1.5rem;
+    overflow-y: auto;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+}
+
+#mobile-nav-overlay.open #mobile-nav-panel {
+    transform: translateX(0);
+}
+
+#mobile-nav-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #222;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem;
+    line-height: 1;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', Georgia, serif;
+    color: #111;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+}
+
+/* --- Links --- */
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+#content a {
+    text-decoration: underline;
+    text-decoration-color: #bbb;
+    text-underline-offset: 2px;
+}
+
+#content a:hover {
+    text-decoration-color: #222;
+}
+
+/* --- Article --- */
+.article-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.5rem;
+}
+
+.article-title a {
+    text-decoration: none !important;
+    color: #111;
+}
+
+.post-time {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.post-time a {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+/* --- Standfirst --- */
+#single-content > p:first-child {
+    font-size: 1.05em;
+}
+
+/* --- Epigraph shortcode --- */
+.right-align {
+    text-align: right;
+    font-style: italic;
+    color: #555;
+    margin: 1.5rem 0 2rem 0;
+    padding-right: 1rem;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.keep-linebreaks {
+    white-space: pre-wrap;
+}
+
+/* --- Table of Contents --- */
+.toc-wrapper {
+    margin: 1.5rem 0 2rem 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    background: #f9f9f9;
+}
+
+.toc-wrapper summary {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: #555;
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+    list-style: none;
+}
+
+.toc-wrapper summary::-webkit-details-marker {
+    display: none;
+}
+
+.toc-wrapper summary::before {
+    content: "▸ ";
+}
+
+.toc-wrapper[open] summary::before {
+    content: "▾ ";
+}
+
+.toc-wrapper nav#TableOfContents {
+    padding: 0 1rem 0.6rem 1rem;
+}
+
+.toc-wrapper nav#TableOfContents ul {
+    list-style: none;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.toc-wrapper nav#TableOfContents > ul {
+    padding-left: 0;
+}
+
+.toc-wrapper nav#TableOfContents li {
+    margin-bottom: 0.25rem;
+}
+
+.toc-wrapper nav#TableOfContents a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: #555;
+    text-decoration: none;
+}
+
+.toc-wrapper nav#TableOfContents a:hover {
+    color: #111;
+}
+
+/* --- Figures & Images --- */
+figure {
+    margin: 1.5rem 0;
+    padding: 0;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+figure figcaption,
+figure figcaption h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85em;
+    color: #555;
+    font-style: italic;
+    margin-top: 0.5rem;
+    font-weight: 400;
+}
+
+/* --- Footnotes --- */
+.footnotes {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ddd;
+    font-size: 0.88rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.footnotes ol {
+    padding-left: 1.5rem;
+}
+
+.footnotes li {
+    margin-bottom: 0.75rem;
+}
+
+.footnotes a {
+    color: #555;
+}
+
+.footnote-ref {
+    font-size: 0.75em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+.footnote-ref a {
+    color: #555;
+    text-decoration: none !important;
+}
+
+.footnote-backref {
+    text-decoration: none !important;
+    color: #555;
+    font-size: 0.85em;
+}
+
+sup a {
+    color: #555;
+    text-decoration: none !important;
+    font-size: 0.75em;
+}
+
+/* --- Series navigation at bottom of essay --- */
+.series-next {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ddd;
+}
+
+.series-next a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    color: #222;
+    text-decoration: none !important;
+    font-weight: 700;
+}
+
+.series-next a:hover {
+    text-decoration: underline !important;
+}
+
+/* --- List pages --- */
+#list-main {
+    display: block;
+}
+
+#list-main h1 {
+    font-size: 1.75rem;
+}
+
+#list-main ul {
+    list-style: none;
+    padding: 0;
+}
+
+#list-main ul li {
+    margin-bottom: 0.5rem;
+}
+
+#list-main ul li a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+}
+
+/* --- Single page --- */
+#main-single {
+    display: block;
+    overflow-wrap: anywhere;
+}
+
+#main-single img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Footer --- */
+#footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: #888;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* --- Mailchimp signup (in sidebar) --- */
+#mc_embed_signup {
+    background: transparent !important;
+    font-size: 0.8rem !important;
+    padding: 0 !important;
+}
+
+#mc_embed_signup label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: #555;
+}
+
+#mc_embed_signup .email {
+    font-size: 0.8rem;
+    width: 100%;
+    padding: 0.4rem;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin-top: 0.4rem;
+}
+
+#mc_embed_signup .button {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    background: #222;
+    color: #fafafa;
+    border: none;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    margin-top: 0.4rem;
+}
+
+#mc_embed_signup .button:hover {
+    background: #444;
+}
+
+/* --- Blockquotes --- */
+blockquote {
+    margin: 1.5rem 0;
+    padding-left: 1.25rem;
+    border-left: 2px solid #ddd;
+    color: #444;
+    font-style: italic;
+}
+
+/* --- Code --- */
+code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85em;
+    background: #f0f0f0;
+    padding: 0.15em 0.3em;
+    border-radius: 2px;
+}
+
+pre code {
+    display: block;
+    padding: 1rem;
+    overflow-x: auto;
+    background: #f0f0f0;
+}
+
+/* --- Lists in content --- */
+#single-content ul,
+#single-content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+#single-content li {
+    margin-bottom: 0.4rem;
+}
+
+/* --- Responsive: Mobile --- */
+@media (max-width: 768px) {
+    #site-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    #sidebar {
+        display: none;
+    }
+
+    #mobile-header {
+        display: flex;
+    }
+
+    #content {
+        padding: 2rem 1.25rem;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    figure {
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+    }
+
+    figure img {
+        width: 100%;
+    }
+}
