@@ -4,7 +4,7 @@
 
 {{ .Content }}
 
-<ul id="sidebar-nav">
+<ul class="series-list">
     {{ range (where .Site.RegularPages "Params.series" true).ByParam "series_order" }}
     <li>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
