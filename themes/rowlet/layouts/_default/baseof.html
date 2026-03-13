@@ -1,19 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 {{- partial "head.html" . -}}
 
 <body>
-    <div id="body-container">
-        {{- partial "header.html" . -}}
-        <div id="content">
-            {{- block "main" . }}{{- end }}
-        </div>
-        {{ if or (ne .Type "essays") (not .IsPage) }}
-            {{- partial "mailchimp.html" . -}}
-        {{ end }}
-        {{- partial "footer.html" . -}}
+    {{- partial "header.html" . -}}
+
+    <div id="mobile-nav-overlay" onclick="closeMobileNav()">
+        <nav id="mobile-nav-panel" onclick="event.stopPropagation()">
+            <button id="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu">&times;</button>
+            <h2 id="sidebar-title"><a href="/">{{ .Site.Title }}</a></h2>
+            <p id="sidebar-subtitle">{{ .Site.Params.subtitle }}</p>
+            <ul id="sidebar-nav">
+                {{ range (where .Site.RegularPages "Params.series" true).ByParam "series_order" }}
+                <li>
+                    <a href="{{ .RelPermalink }}"{{ if eq $.RelPermalink .RelPermalink }} class="active"{{ end }}>{{ .Title }}</a>
+                </li>
+                {{ end }}
+            </ul>
+            <a id="sidebar-pdf" href="{{ .Site.Params.pdfPath }}">Full series as PDF ↓</a>
+        </nav>
     </div>
 
-</body>
+    <div id="site-wrapper">
+        {{- partial "sidebar.html" . -}}
 
+        <div id="main-area">
+            <div id="content">
+                {{- block "main" . }}{{- end }}
+            </div>
+            {{- partial "footer.html" . -}}
+        </div>
+    </div>
+
+    <script>
+    function openMobileNav() {
+        document.getElementById('mobile-nav-overlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeMobileNav() {
+        document.getElementById('mobile-nav-overlay').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    </script>
+</body>
 </html>

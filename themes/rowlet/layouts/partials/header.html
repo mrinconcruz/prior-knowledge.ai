@@ -1,17 +1,8 @@
-<header id="header">
-    
-    <h1 id="header-text">
-        <a href="{{ref . "/"}}">{{ .Site.Title}}</a>
-    </h1>
-    <nav id="topnav">
-        <ul>
-            <li>
-                <a class="{{ if (eq .Section "about")}}active{{ end }}" href={{ref . "/about"}}>about</a>
-                <a class="{{ if (eq .Section "essays")}}active{{ end }}" href={{ref . "/essays"}}>essays</a>
-                <a class="{{ if (eq .Section "media")}}active{{ end }}" href={{ref . "/media"}}>media</a>
-                <a class="{{ if (eq .Section "research")}}active{{ end }}" href={{ref . "/research"}}>research</a>
-
-            </li>
-        </ul>
-    </nav>
+<header id="mobile-header">
+    <h1 id="mobile-header-title"><a href="/">{{ .Site.Title }}</a></h1>
+    <button id="hamburger-btn" onclick="openMobileNav()" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </header>

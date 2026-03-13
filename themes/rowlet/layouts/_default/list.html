@@ -7,14 +7,13 @@
         {{ .Content }}
         <ul>
             {{ range .Pages }}
-                {{if not .Params.hidden }}
+                {{ if not .Params.hidden }}
                 <li>
-                    <a href="{{.Permalink}}">{{.Title}}</a>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
                 </li>
                 {{ end }}
             {{ end }}
         </ul>
     </article>
 </main>
-
 {{ end }}
