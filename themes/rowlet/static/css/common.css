@@ -49,20 +49,14 @@ body {
     padding-top: 2rem;
 }
 
-#header-row {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
 #header h1 {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.25rem 0;
+    text-align: center;
 }
 
 #header-text a {
@@ -74,23 +68,28 @@ body {
     color: #222;
 }
 
-/* Hamburger — hidden on desktop */
-#hamburger-btn {
+#header-subtitle {
     display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.25rem;
-    flex-direction: column;
-    gap: 4px;
-    margin-left: auto;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    margin: 0 0 1rem 0;
+    text-align: center;
 }
 
-#hamburger-btn span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: #222;
+/* Hamburger — hidden on desktop, centered "☰ Menu" button on mobile */
+#hamburger-btn {
+    display: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: #222;
+    background: none;
+    border: 1px solid #999;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 0.35rem 1.25rem;
+    margin: 0 auto 1.5rem auto;
 }
 
 #topnav {
@@ -495,12 +494,12 @@ pre code {
 
 /* --- Responsive: Mobile --- */
 @media (max-width: 768px) {
-    #header-row {
-        justify-content: space-between;
+    #hamburger-btn {
+        display: block;
     }
 
-    #hamburger-btn {
-        display: flex;
+    #header-subtitle {
+        display: block;
     }
 
     #topnav {
